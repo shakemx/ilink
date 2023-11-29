@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  ilinkdb:
+      container_name: ilinkdb
+      image: postgres:13.0
+      environment:
+        - POSTGRES_USER=ilink
+        - POSTGRES_PASSWORD=ilinkpass
+        - POSTGRES_DB=ilinkdb
+      expose: 
+        - 5432
+      ports:
+        - 5432:5432
+  ilinkweb:
+      container_name: ilinkweb
+      build: .
+      command: 'python3 manage.py runserver 0.0.0.0:8000'
+      volumes:
+        - .:/app
+      ports:
+        - '8000:8000'
+      env_file:
+        - '.env'
+      depends_on:
+        - ilinkdb
