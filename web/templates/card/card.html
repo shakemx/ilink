@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+<!--SEO-->
+{% block title %}{{user.name}}{% endblock title %}
+{% block description %}{{user.role}}{% endblock description %}
+{% block titleop %}{{user.name}}{% endblock titleop %}
+{% block description_op %}{{user.role}}{% endblock description_op %}
+{% block image_op %}{{company.logo}}{% endblock image_op %}
+{% block favicon %}{% static 'img/favicon.png' %}{% endblock favicon%}
+
+<!--Body-->
+{% block main_body_data %}
+
+{% include "card/cover.html" %}
+{% include "card/favs.html" %}
+{% include "card/card_company.html" %}
+{% include "card/banner_company.html" %}
+{% include "card/services.html" %}
+{% include "card/call.html" %}
+{% include "card/utilities.html" %}
+
+
+
+<!--Modal-->
+{% include "card/modal/modal-user.html" %}
+{% include "card/modal/modal-map.html" %}
+{% include "card/modal/modal-share.html" %}
+{% include "card/modal/modal-favs.html" %}
+
+<!--Styles-->
+{% include "color/sass.html" %}
+
+
+
+
+
+
+
+<!----------------END CARD---------------------->
+
+{% endblock %}
+
+
+<!--JS-->
+{% block child_js_above_files %}
+{% endblock %}
+
+{% block child_js_below_files %}
+{% endblock %}

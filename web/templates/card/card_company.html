@@ -1,0 +1,40 @@
+{% load static %}
+<section id="card-company">
+    <div class="container ">
+        {% if tool_company.all|length > 4 %}
+        <div class="row gx-0 bg-card align-content-center">
+            <div class="col-1 d-flex align-items-center">
+                <ul class="text-start ">
+                    {% for t in tool_company.all %}
+                    <li><a href="{{t.url}}" target="_blank"><i class="{{t.icon.icon}}"></i></a></li>
+                    {% endfor %}                        
+                </ul>
+            </div>
+            <div class="col-4 offset-3 text-center">
+                <img src="{{MEDIA_URL}}{{company.logo}}" alt="{{company.name}}" class="img-logo">
+            </div>   
+            <div class="col-1 offset-3 d-flex align-items-center">
+                <ul class="ms-auto ">
+                    {% for t in tool_company.all %}
+                    <li><a href="{{t.url}}" target="_blank"><i class="{{t.icon.icon}}"></i></a></li>
+                    {% endfor %}                        
+                </ul>
+            </div>         
+        </div>
+        {% else %}
+        <div class="row  bg-card align-content-center">
+            <div class="col-4 offset-4 text-center">
+                <img src="{{MEDIA_URL}}{{company.logo}}" alt="{{company.name}}" class="img-logo">
+            </div>
+            <div class="col-4 d-flex align-items-center ">
+                <ul class="text-md-end  ms-auto">
+                    {% for t in tool_company.all %}
+                    <li><a href="{{t.url}}" target="_blank"><i class="{{t.icon.icon}}"></i></a></li>
+                    {% endfor %}                        
+                </ul>
+            </div>
+        </div>
+      
+        {% endif %}
+    </div>
+</section>
