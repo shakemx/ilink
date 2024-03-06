@@ -32,7 +32,7 @@ def card(request, slug):
             company = Company.objects.prefetch_related('user').first()
             tool = user.tool.prefetch_related('icon').filter(is_active=True)
             tool_company = company.tool.prefetch_related('icon').filter(is_active=True)
-            qr_user = '{}{}/{}'.format('https://', 'ilink.mx/agente', user.slug)
+            qr_user = '{}{}/{}'.format('https://', 'ilink.mx/card', user.slug)
             ctx = {
                 'user': user,
                 'company': company,
