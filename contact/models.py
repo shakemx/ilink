@@ -17,6 +17,7 @@ class Card(BaseModel):
     whatsapp = models.CharField('Whatsapp Business', max_length=15, blank=False, null=False)
     web = models.URLField('Sitio Web',blank=True,)
     schedule = models.CharField('Horario', max_length=100, blank=True,)
+    address = models.CharField('Ubicación', max_length=100, blank=True,)
     type = models.CharField('Tipo', max_length=10, choices=CHOICE_TYPE, default=USER, blank=False)
 
 
