@@ -29,7 +29,7 @@ def card(request, slug):
     if request.method == 'GET':
         user = User.objects.prefetch_related('tool').filter(slug=slug,is_active=True).first()
         if user:
-            company = Company.objects.prefetch_related('user').first()
+            company = Company.objects.prefetch_related('user').filter(user=user, is_active=True).first()
             tool = user.tool.prefetch_related('icon').filter(is_active=True)
             tool_company = company.tool.prefetch_related('icon').filter(is_active=True)
             qr_user = '{}{}/{}'.format('https://', 'ilink.mx/card', user.slug)
