@@ -11,6 +11,7 @@ class ColorCompany(BaseModel):
     text_secondary = ColorField('Texto Secundario',format="hexa",default='#fffffe', null=True)
     company_main = ColorField('Empresa',format="hexa",default='#6246ea', null=True)
     company_secondary = ColorField('Empresa Secundario',format="hexa",default='#d1d1e9', null=True)
+    company_utilities = ColorField('Color Contenedor Utilerias',format="hexa",default='#6246ea)', null=True)
     company_icon = ColorField('Icono Empresa',format="hexa",default='#fffffe', null=True)
     icono_main = ColorField('Icono Principal',format="hexa",default='#2B2C34', null=True)
     icono_secondary = ColorField('Icono Secundario',format="hexa",default='#6246ea', null=True)
